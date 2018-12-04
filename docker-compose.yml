@@ -1,0 +1,16 @@
+# ra9docker
+version: '2'
+
+services:
+  sample:
+    build:
+      context: .
+      dockerfile: ./products/sample/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./volumes/sample:/srv/www/rails/sample
+
+volumes:
+  dev_root:
+    driver: local
